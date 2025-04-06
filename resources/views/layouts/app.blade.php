@@ -18,8 +18,7 @@
     </div>
 
     @include('layouts.footer')
-    {{-- ✅ Laravel Vite for JavaScript --}}
-    @vite(['resources/js/app.js'])
+   
     @yield('scripts')
     
 
