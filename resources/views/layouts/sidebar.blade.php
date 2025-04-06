@@ -2,8 +2,11 @@
     :class="open ? 'w-64' : 'w-16'">
 
     <!-- Header with Toggle -->
-    <div class="p-4 flex items-center justify-between border-b border-gray-700">
-        <span x-show="open" x-cloak class="text-xl font-bold">App Name</span>
+    <div class="p-3 flex items-center justify-between border-b border-gray-700">
+        <span x-show="open" x-cloak class="text-3xl font-bold leading-snug">
+            <strong class="tracking-widest block">Quiz Admin</strong>
+        </span>
+        
         <button @click="open = !open" class="text-white text-xl focus:outline-none">
             <i :class="open ? 'fas fa-times' : 'fas fa-bars'"></i>
         </button>
@@ -42,29 +45,31 @@
                 <!-- Today Reports -->
                 <a href="#" @click.prevent="active = 'reports'; subActive = 'today'"
                     :class="subActive === 'today'
-                        ? 'bg-blue-300 text-gray-900 font-semibold shadow-sm'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'"
+                        ?
+                        'bg-blue-300 text-gray-900 font-semibold shadow-sm' :
+                        'text-gray-300 hover:bg-gray-700 hover:text-white'"
                     class="flex items-center text-sm px-4 py-1 pl-6 rounded-r-lg transition-all duration-200">
                     <span class="text-white text-2xl mr-2" style="text-shadow: 1px 1px 3px #000000;">•</span>
 
                     <span x-show="open" x-cloak>Today Reports</span>
                 </a>
-            
+
                 <!-- Previous Reports -->
                 <a href="#" @click.prevent="active = 'reports'; subActive = 'previous'"
                     :class="subActive === 'previous'
-                        ? 'bg-blue-300 text-gray-900 font-semibold shadow-sm'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'"
+                        ?
+                        'bg-blue-300 text-gray-900 font-semibold shadow-sm' :
+                        'text-gray-300 hover:bg-gray-700 hover:text-white'"
                     class="flex items-center text-sm px-4 py-1 pl-6 rounded-r-lg transition-all duration-200">
                     <span class="text-white text-2xl mr-2" style="text-shadow: 1px 1px 3px #000000;">•</span>
 
                     <span x-show="open" x-cloak>Previous Reports</span>
                 </a>
             </div>
-            
-            
-            
-            
+
+
+
+
         </div>
 
 
