@@ -36,6 +36,10 @@ class AuthController extends Controller
     {
         return view('dashboard');
     }
+    public function Home()
+    {
+        return view('pages/home');
+    }
 
     public function Logout(Request $request)
     {

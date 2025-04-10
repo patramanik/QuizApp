@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>My Laravel App</title>
+    {{-- <title>My Laravel App</title> --}}
+    <title>@yield('title', '| Quiz Admin')</title>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
