@@ -17,20 +17,20 @@
         <!-- Dashboard -->
         <a href="{{ route('dashboard') }}"
             class="flex items-center p-3 mx-2 rounded-r-lg transition-all duration-150 hover:bg-gray-700
-              {{ request()->routeIs('dashboard') ? 'bg-blue-700 text-white border-l-4 border-blue-300 shadow-sm' : 'text-gray-300' }}">
+              {{ request()->routeIs('dashboard') ? 'bg-blue-500 text-white border-l-4 border-blue-300 shadow-sm' : 'text-gray-300' }}">
             <i class="fas fa-home w-6 text-lg mr-3"></i>
             <span x-show="sidebarOpen" x-cloak>Dashboard</span>
         </a>
 
-        <!-- Reports Menu -->
+        <!-- Quiz Menu -->
         @php
-            $isReports = request()->routeIs('home'); 
+          $isReports = request()->routeIs('quizentry') || request()->routeIs('quizlist');
         @endphp
 
         <div class="mx-2" x-data="{ showReports: {{ $isReports ? 'true' : 'false' }} }">
             <button @click="showReports = !showReports"
                 class="w-full flex items-center p-3 rounded-r-lg mt-1 focus:outline-none transition-all duration-150 hover:bg-gray-700
-                       {{ $isReports ? 'bg-blue-700 text-white border-l-4 border-blue-300 shadow-md' : 'text-gray-300' }}">
+                       {{ $isReports ? 'bg-blue-500 text-white border-l-4 border-blue-300 shadow-md' : 'text-gray-300' }}">
                 <i class="fas fa-chart-line w-6 text-lg mr-3"></i>
                 <span x-show="sidebarOpen" x-cloak class="flex-1 text-left">Reports</span>
                 <i x-show="sidebarOpen" :class="showReports ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"
@@ -40,19 +40,19 @@
             <!-- Sub Reports -->
             <div x-show="showReports && sidebarOpen" x-cloak x-transition class="ml-5 mt-1 space-y-1">
                 <!-- Today Reports -->
-                <a href="{{ route('home') }}"
+                <a href="{{ route('quizentry') }}"
                     class="flex items-center text-sm px-4 py-1 pl-6 rounded-r-lg transition-all duration-150
-                      {{ request()->routeIs('home') ? 'bg-blue-300 text-gray-900 font-semibold shadow-sm' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">
+                      {{ request()->routeIs('quizentry') ? 'bg-blue-200 text-gray-900 font-semibold shadow-sm' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">
                     <span class="text-white text-2xl mr-2">•</span>
                     <span>Today Reports</span>
                 </a>
 
                 <!-- Previous Reports -->
-                <a href="#"
+                <a href="{{ route('quizlist') }}"
                     class="flex items-center text-sm px-4 py-1 pl-6 rounded-r-lg transition-all duration-150
-                      text-gray-300 hover:bg-gray-700 hover:text-white">
+                      {{ request()->routeIs('quizlist') ? 'bg-blue-200 text-gray-900 font-semibold shadow-sm' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">
                     <span class="text-white text-2xl mr-2">•</span>
-                    <span>Previous Reports</span>
+                    <span>Today Reports</span>
                 </a>
             </div>
         </div>
