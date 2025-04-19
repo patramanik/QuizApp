@@ -4,7 +4,7 @@
     <!-- Sidebar Header -->
     <div class="h-[60px] px-3 flex items-center justify-between border-b border-gray-700">
         <span x-show="sidebarOpen" x-cloak class="text-3xl font-extrabold tracking-widest cursor-pointer"
-            onclick="location.reload()"> 
+            onclick="location.reload()">
             Quiz Admin
         </span>
         <button @click="sidebarOpen = !sidebarOpen" class="text-white text-2xl focus:outline-none">
@@ -17,7 +17,7 @@
         <!-- Dashboard -->
         <a href="{{ route('dashboard') }}"
             class="flex items-center p-3 mx-2 rounded-r-lg transition-all duration-150 hover:bg-gray-700
-              {{ request()->routeIs('dashboard') ? 'bg-blue-500 text-white border-l-4 border-blue-300 shadow-sm' : 'text-gray-300' }}">
+              {{ request()->routeIs('dashboard') ? 'bg-gray-500 text-white border-l-4 border-blue-300 shadow-sm' : 'text-gray-300' }}">
             <i class="fas fa-home w-6 text-lg mr-3"></i>
             <span x-show="sidebarOpen" x-cloak>Dashboard</span>
         </a>
@@ -30,7 +30,7 @@
         <div class="mx-2" x-data="{ showReports: {{ $isReports ? 'true' : 'false' }} }">
             <button @click="showReports = !showReports"
                 class="w-full flex items-center p-3 rounded-r-lg mt-1 focus:outline-none transition-all duration-150 hover:bg-gray-700
-                       {{ $isReports ? 'bg-blue-500 text-white border-l-4 border-blue-300 shadow-md' : 'text-gray-300' }}">
+                       {{ $isReports ? 'bg-grey-500 text-white  border-l-4 border-blue-300 shadow-md' : 'text-gray-300' }}">
                 <i class="fas fa-chart-line w-6 text-lg mr-3"></i>
                 <span x-show="sidebarOpen" x-cloak class="flex-1 text-left">Reports</span>
                 <i x-show="sidebarOpen" :class="showReports ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"
