@@ -11,7 +11,8 @@ Route::post('/', [AuthController::class, 'Login'])->name('login');
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AuthController::class, 'Dashboard'])->name('dashboard');
     Route::get('/home', [AuthController::class, 'Home'])->name('home');
-    Route::get('/quizentry', [QuizController::class, 'Quizentry'])->name('quizentry');
+    Route::get('/quizview', [QuizController::class, 'Quizview'])->name('quizentry');
+    Route::post('/quizentry', [QuizController::class, 'Quizentry'])->name('quizentry.store');
     Route::get('/quizlist', [QuizController::class, 'Quizlist'])->name('quizlist');
 });
 
