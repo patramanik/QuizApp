@@ -1,6 +1,6 @@
 <header
     class="relative h-[55px] bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 flex justify-between items-center shadow-md">
-    
+
     <!-- Centered Title -->
     <h1 class="absolute left-1/2 transform -translate-x-1/2 text-2xl font-semibold tracking-wide">
         Welcome to Quiz Admin Panel!
